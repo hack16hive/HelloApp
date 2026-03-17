@@ -1,26 +1,29 @@
 /**
  * HelloApp.java- a simple Java application that prints "Hello, World!" to the console.
- * This is the first step in the HelloApp journey, where we start with a basic
- * "hello!, world!" program. The application consists of a single class with a main method that serves as the entry point of the program. When executed, it will display the message "Hello, World!" in the console.
- * This is a fundamental example of a Java application and serves as a starting point for learning Java programming. It demonstrates the basic structure of a Java program, including the class definition and the main method, which is essential for any Java application to run.
+ * HelloAppUC1 by accepting the user name as a command line argument and greeting the user with a personalized message.
+ * 
+ * UC1: Display "Hello World"- The application will print "Hello, World!" to the console when executed.
+ * UC2: Personalized Greeting- The application will accept a user's name as a command line argument and greet the user with a personalized message, such as "Hello, [User's Name]!".
  * 
  * Author: Hritika Singh
  * @version 1.0
+ * @since Uc1
  */
 
 /**
  * Key Java Concept Used:
- * 1. Class declaration: Defines a blueprint for objects.
- * 2. Main method: The entry point of program execution.
- * 3. Static Keyword: Indicates that the method belongs to the class, not an instance.
- * 4. String Argument Array: Parameters passed to the main method.
- * 5. System.out.println: A method used to print messages to the console.
+ * 1. Command-line Arguments: Allows users to pass information to the program when it is executed.
+ * 2. String Concatenation: The process of combining two or more strings using + operator.
+ * 3. Array Indexing: Accessing elements of an array using their index, starting from 0.
+ * 4. System.out.println: A method used to print messages to the console.
  */
 
 public class HelloApp 
 {
     public static void main(String[] args)
     {
-        System.out.println("Hello, World!");
+        // Get the name from command line arguments
+        String name= args[0];
+        System.out.println("Hello, " + name + "!");
     }
 }
