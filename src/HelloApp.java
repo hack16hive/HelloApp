@@ -8,9 +8,11 @@
  * Usage: Java HelloApp [name]
  * - If a name is provided, it will greet the user with "Hello, [name]!".
  * - If no name is provided, it will greet with "Hello, World!".
+ * UC4: Accept Multiple Arguments- The application can be extended to accept multiple names as command line arguments and greet each user individually, such as "Hello, [User1], [User2], ...!".
+ * - if no names are provided, it will greet with "Hello, World!".
  * 
  * Author: Hritika Singh
- * @version 3.0
+ * @version 4.0
  * @since Uc1
  */
 
@@ -20,7 +22,8 @@
  * 2. Default Values: Providing a fallback value when no input is given.
  * 3. Conditional Statement: Using if to check conditions.
  * 4. Boolean Logic: Using logical conditions to make decisions.
- * 5. Array Length: Checking the number of command-line arguments provided.
+ * 5. Looping: Using a for-each loop to iterate through multiple command-line arguments.
+ * 6. Array Length: Checking the number of command-line arguments provided.
  */
 
 public class HelloApp 
@@ -28,11 +31,12 @@ public class HelloApp
     public static void main(String[] args)
     {
         // default value
-        String name= "World";
-        // Check if a name is provided as a command line argument
-        if (args.length > 0) {
-            name = args[0];   // use the provided name
+        if (args.length == 0) {
+            System.out.println("Hello, World!");
+        } else{
+            //loop through the provided names and greet each one
+        for (String name: args) {
+        System.out.println("Hello, " + name + "!");}
         }
-        System.out.println("Hello, " + name + "!");
     }
 }
