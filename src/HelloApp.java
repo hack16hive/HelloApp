@@ -1,18 +1,10 @@
 /**
  * HelloApp.java- a simple Java application that greets the user by name if provided as a command line argument, otherwise prints "Hello, World!" to the console.
- * This use case demonstrate how to handle optional command-line arguments and provide default values in Java.
+ * uC7: Display "Hello" with multiple command line arguments using String.join() method to simplify code and improve readability.
  * 
- * UC1: Display "Hello World"- The application will print "Hello, World!" to the console when executed.
- * UC2: Personalized Greeting- The application will accept a user's name as a command line argument and greet the user with a personalized message, such as "Hello, [User's Name]!".
- * UC3: Provide Default value- If no name is provided as a command line argument, the application should display a default greeting message.
- * Usage: Java HelloApp [name]
- * - If a name is provided, it will greet the user with "Hello, [name]!".
- * - If no name is provided, it will greet with "Hello, World!".
- * UC4: Accept Multiple Arguments- The application can be extended to accept multiple names as command line arguments and greet each user individually, such as "Hello, [User1], [User2], ...!".
- * - if no names are provided, it will greet with "Hello, World!".
  * 
  * Author: Hritika Singh
- * @version 4.0
+ * @version 7.0
  * @since Uc1
  */
 
@@ -23,7 +15,9 @@
  * 3. Conditional Statement: Using if to check conditions.
  * 4. Boolean Logic: Using logical conditions to make decisions.
  * 5. Looping: Using a for-each loop to iterate through multiple command-line arguments.
- * 6. Array Length: Checking the number of command-line arguments provided.
+ * 6. Array Length: Checking the number of command-line arguments  provided.
+ * 7. string.join(): A method to concatenate strings with a specified delimiter.
+ * code simplification: Instead of using StringBuilder and substring to remove the trailing comma, we can use String.join() to concatenate the names with a delimiter, which simplifies the code and improves readability.
  */
 
 public class HelloApp 
@@ -34,17 +28,10 @@ public class HelloApp
         if (args.length == 0) {
             System.out.println("Hello, World!");
         } else {
-            StringBuilder nameBuilder = new StringBuilder();
+            // Join all names with comma and space
+            String names = String.join(", ", args);
 
-            // Append names with delimiter
-            for (String name : args) {
-                nameBuilder.append(name).append(", ");
-            }
-
-            // Remove trailing ", " using substring
-            String names = nameBuilder.substring(0, nameBuilder.length() - 2);
-
-            // Print final greeting
+            // Print greeting
             System.out.println("Hello, " + names + "!");
         }
     }
