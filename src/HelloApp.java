@@ -30,13 +30,23 @@ public class HelloApp
 {
     public static void main(String[] args)
     {
-        // default value
         if (args.length == 0) {
             System.out.println("Hello, World!");
-        } else{
-            //loop through the provided names and greet each one
-        for (String name: args) {
-        System.out.println("Hello, " + name + "!");}
+        } else {
+            StringBuilder nameBuilder = new StringBuilder();
+            boolean first = true;
+
+            // Build comma-separated names
+            for (String name : args) {
+                if (!first) {
+                    nameBuilder.append(", ");
+                }
+                nameBuilder.append(name);
+                first = false;
+            }
+
+            // Final greeting
+            System.out.println("Hello, " + nameBuilder.toString() + "!");
         }
     }
 }
