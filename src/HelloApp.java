@@ -30,23 +30,22 @@ public class HelloApp
 {
     public static void main(String[] args)
     {
+        // Default case
         if (args.length == 0) {
             System.out.println("Hello, World!");
         } else {
             StringBuilder nameBuilder = new StringBuilder();
-            boolean first = true;
 
-            // Build comma-separated names
+            // Append names with delimiter
             for (String name : args) {
-                if (!first) {
-                    nameBuilder.append(", ");
-                }
-                nameBuilder.append(name);
-                first = false;
+                nameBuilder.append(name).append(", ");
             }
 
-            // Final greeting
-            System.out.println("Hello, " + nameBuilder.toString() + "!");
+            // Remove trailing ", " using substring
+            String names = nameBuilder.substring(0, nameBuilder.length() - 2);
+
+            // Print final greeting
+            System.out.println("Hello, " + names + "!");
         }
     }
 }
